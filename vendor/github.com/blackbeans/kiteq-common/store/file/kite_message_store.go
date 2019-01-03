@@ -688,6 +688,6 @@ func dirExist(dir string) bool {
 	if err == nil {
 		return info.IsDir()
 	} else {
-		return !os.IsNotExist(err) && info.IsDir()
+		return !os.IsNotExist(err) && info != nil && info.IsDir()
 	}
 }

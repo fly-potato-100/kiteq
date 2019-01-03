@@ -93,10 +93,10 @@ func MockServerOption() ServerOption {
 
 func Parse() ServerOption {
 	//两种方式都支持
-	pprofPort := flag.Int("pport", -1, "pprof port default value is -1 ")
+	pprofPort := flag.Int("pport", 13801, "pprof port default value is -1 ")
 	bindAddr := flag.String("bind", "localhost:13800", "-bind=localhost:13800")
-	clusterName := flag.String("clusterName", "default_dev", "-clusterName=default_dev")
-	configPath := flag.String("configPath", "", "-configPath=conf/cluster.toml kiteq配置的toml文件")
+	clusterName := flag.String("clusterName", "file_dev", "-clusterName=default_dev")
+	configPath := flag.String("configPath", "conf/cluster.toml", "-configPath=conf/cluster.toml kiteq配置的toml文件")
 	flag.Parse()
 
 	so := ServerOption{}

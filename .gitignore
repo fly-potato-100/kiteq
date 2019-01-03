@@ -27,3 +27,6 @@ kite_benchmark_consumer
 kite_benchmark_producer
 kiteq
 
+logs
+snapshot
+.idea

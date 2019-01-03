@@ -33,13 +33,13 @@ func main() {
 	qserver.Start()
 
 	var s = make(chan os.Signal, 1)
-	signal.Notify(s, syscall.SIGKILL, syscall.SIGUSR1)
+	signal.Notify(s, syscall.SIGKILL, syscall.SIGSEGV)
 	//是否收到kill的命令
 	for {
 		cmd := <-s
 		if cmd == syscall.SIGKILL {
 			break
-		} else if cmd == syscall.SIGUSR1 {
+		} else if cmd == syscall.SIGSEGV {
 			//如果为siguser1则进行dump内存
 			unixtime := time.Now().Unix()
 			path := fmt.Sprintf("./heapdump-kiteq-%d", unixtime)

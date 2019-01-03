@@ -1,7 +1,7 @@
 #registry的管理
 [registry]
 	[registry.dev]
-		hosts="zk://localhost:2181"
+		hosts="zk://123.206.17.232:2181"
 		#hosts="etcd://http://localhost:2379"
 	[registry.online]
 		hosts="zk://vm-bibi-zk-mq001.vm:2181,vm-bibi-zk-mq002.vm:2181,vm-bibi-zk-mq003.vm:2181" 
@@ -22,7 +22,7 @@
 	
 	[clusters.file_dev]
 		env="dev" #env=dev/online
-		topics=["relation","message","profile"]
+		topics=["relation","message","profile","user-profile"]
 		dlqExecHour=2
 		deliveryFirst=false
 		logxml="./log/log_test.xml"
